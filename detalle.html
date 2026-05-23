@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Auto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="detalle" style="padding:30px;"></div>
+
+    <script>
+        const auto = JSON.parse(localStorage.getItem("autoSeleccionado"));
+
+        document.getElementById("detalle").innerHTML = `
+      <h1>${auto.marca} ${auto.modelo}</h1>
+      <img src="${auto.imagen}" style="width:400px">
+      <p>Año: ${auto.año}</p>
+      <p>Precio: ${auto.precio}</p>
+      <button onclick="contactar('${auto.marca} ${auto.modelo}')">
+        Contactar
+      </button>
+    `;
+
+        function contactar(auto) {
+            const mensaje = `Hola, me interesa el ${auto}`;
+            window.open(`https://wa.me/521XXXXXXXXXX?text=${encodeURIComponent(mensaje)}`);
+        }
+    </script>
+
+</body>
+
+</html>

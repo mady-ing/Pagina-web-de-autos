@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* FILTROS */
+.filtros {
+    padding: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* AUTOS */
+.autos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.auto-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.auto-card:hover {
+    transform: translateY(-5px);
+}
+
+.auto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.auto-info {
+    padding: 15px;
+}
+
+.auto-info h3 {
+    margin: 0;
+}
+
+.auto-info p {
+    color: #555;
+}
+
+button {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* WHATSAPP FLOTANTE */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.auto-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecer 0.6s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
